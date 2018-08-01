@@ -1,0 +1,111 @@
+body {
+  margin-top: 60px;
+  display: none;
+}
+
+.page {
+  display: none;
+}
+
+#status-page {
+  display: block;
+}
+
+.navbar-brand img {
+  width: 25px;
+  display: inline-block;
+}
+
+.glyphicon-unchecked {
+  color: #666
+}
+
+.glyphicon-check {
+  color: rgb(67, 180, 33);
+}
+
+.table thead {
+  ackground: #aaa;
+}
+
+.table tbody tr:nth-child(odd) {
+  background: #fff;
+}
+
+.table tbody tr:nth-child(even) {
+  background: #d9d9d9;
+}
+
+.table tbody tr:hover {
+  background: rgb(255, 250, 203);
+}
+
+.alert {
+  display: none
+}
+
+.glyphicon-pencil,
+.glyphicon-remove,
+.glyphicon-eye-open {
+  cursor: pointer;
+}
+
+.td-nmChat{
+  max-width:200px;
+  min-width:200px; 
+}
+
+.navbar-right{
+  margin: 10px 0px;
+  padding: 5px;
+  background-color: #D9D9D9;
+  border-radius: 5px;
+}
+
+.navbar-right li{
+  margin: 0px 10px;
+}
+
+hr {
+  height: 12px;
+  border: 0;
+  box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);	
+  margin: 10px 0px;
+}
+
+
+.page input[type=text] {
+  width: 100px;
+}
+
+.page select  {
+  max-width: 150px;
+}
+
+@media screen and (max-width:600px) {
+  .page input[type=text] {
+    width: 100%;
+  }
+  .page select  {
+    max-width: 100%;
+  }
+}
+
+#messageFilterBusca {
+  min-width: 300px;
+}
+
+.direction-out .td-chatMsg {
+  text-align: right;
+}
+
+.td-chatMsg {
+  white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+  white-space: -webkit-pre-wrap; /*Chrome & Safari */ 
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  white-space: pre-wrap;       /* css-3 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  word-break: break-all;
+  white-space: normal;
+}

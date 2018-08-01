@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title>WhatsApp - Scraper</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/jquery-ui.min.css">
+	<link rel="stylesheet" href="./css/jquery.paginate.min.css">
+	<link rel="stylesheet" href="./css/highcharts.css">
+	<link rel="stylesheet" href="./css/MagnificPopup.css">
+	<link rel="stylesheet" href="./css/app.css">
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand nav-link" href="#chart-page">
+					WhatsApp - Scraper</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="#messages-page" class="nav-link">Messages</a>
+					</li>
+					<li>
+						<a href="#ranking-page" class="nav-link">Ranking</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li id="li_last_load">
+						<input type="text" id="dataLoad" style="display:none" />
+						<span>...</span>
+						<button class="btn btn-xs btn-success btn-carregar">Capture</button>
+					</li>
+				</ul>
+
+			</div>
+
+		</div>
+	</nav>
+
+	<!-- chart page -->
+	<div id="chart-page" class="page">
+
+		<div class="container-fluid">
+
+			<div class="row">
+				<div class="col-md-12">
+
+					<form id="chartFilterForm" class="form-inline">
+						<div class="form-group">
+							<label>From</label>
+							<input type="text" id="chartFilterFrom" placeholder="from" class="form-control">
+						</div>
+						<div class="form-group">
+							<label>To</label>
+							<input type="text" id="chartFilterTo" placeholder="to" class="form-control">
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Filter" class="btn btn-info">
+						</div>
+					</form>
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+					<hr>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+
+					<div id="div_chart"></div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- /chart page -->
+
+	<!-- messages page -->
+	<div id="messages-page" class="page">
+
+		<div class="container-fluid">
+
+			<div class="row">
+				<div class="col-md-12">
+
+					<form id="messageFilterForm" class="form-inline">
+						<div class="form-group">
+							<label>Chat/Contact</label>
+							<select id="messageFilterChatContato" class="form-control">
+								<option value="">- loading -</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>From</label>
+							<input type="text" id="messageFilterFrom" placeholder="from" class="form-control">
+						</div>
+						<div class="form-group">
+							<label>To</label>
+							<input type="text" id="messageFilterTo" placeholder="to" class="form-control">
+						</div>
+						<div class="form-group">
+							<label>Read</label>
+							<select id="messageFilterStatus" class="form-control">
+								<option value="">All</option>
+								<option value="LIDA">Yes</option>
+								<option value="ENVIADA">No</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Search</label>
+							<input type="text" id="messageFilterBusca" placeholder="Search" class="form-control" maxlength="50">
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Filter" class="btn btn-info">
+						</div>
+					</form>
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+					<hr>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+					<table id="tbl_messages" class="table table-striped" cellspacing="0" width="100%">
+						<thead>
+							<tr>
+								<th>Chat/Contact</th>
+								<th>Message</th>
+								<th style="width:200px;">Date</th>
+								<th class="text-center" style="width:50px">Read</th>
+								<th style="width:60px"></th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- /message page -->
+
+	<!-- ranking page -->
+	<div id="ranking-page" class="page">
+
+		<div class="container-fluid">
+
+			<div class="row">
+				<div class="col-md-12">
+
+					<form id="rankingFilterForm" class="form-inline">
+						<div class="form-group">
+							<label>From</label>
+							<input type="text" id="rankingFilterFrom" placeholder="from" class="form-control">
+						</div>
+						<div class="form-group">
+							<label>To</label>
+							<input type="text" id="rankingFilterTo" placeholder="to" class="form-control">
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Filter" class="btn btn-info">
+						</div>
+					</form>
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+					<hr>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+					<table id="tbl_ranking" class="table table-striped" cellspacing="0" width="100%">
+						<thead>
+							<tr>
+								<th>Chat/Contact</th>
+								<th style="width:200px;" class="text-center">% read messages</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- /ranking page -->
+
+	<div id="whats-page" class="page">
+		<webview id="webview" preload="./scraper.js" disablewebsecurity src="./whatsapp.html" style="position:absolute;width:100%;height:100%;top:0px;left:0px"></webview>
+		<script></script>
+	</div>
+	
+	<script src="./js/jquery-1.9.1.min.js"></script>
+	<script src="./js/jquery-ui.min.js"></script>
+	<script src="./js/jquery.blockUI.min.js"></script>
+	<script src="./js/jquery.paginate.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/mask.js"></script>
+	<script src="./js/MagnificPopup.min.js"></script>
+	<script src="./js/chart_page.js"></script>
+	<script src="./js/messages_page.js"></script>
+	<script src="./js/ranking_page.js"></script>
+	<script src="./js/main_page.js"></script>
+
+</body>
+</html>

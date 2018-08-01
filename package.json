@@ -1,0 +1,63 @@
+{
+  "name": "whatsapp_scraper",
+  "productName": "WhatsApp Scraper",
+  "version": "1.0.0",
+  "description": "Scraper solution for whatsapp web",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "eslint src --color"
+  },
+  "keywords": [],
+  "author": "Ivan Valadares",
+  "license": "Proprietary",
+  "private": true,
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ]
+      },
+      "electronPackagerConfig": {
+        "icon": "./icon.ico",
+        "packageManager": "npm"
+      },
+      "electronWinstallerConfig": {
+        "setupIcon": "./icon.ico",
+        "noMsi": true
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {},
+      "github_repository": {
+        "owner": "",
+        "name": ""
+      },
+      "windowsStoreConfig": {
+        "packageName": "",
+        "name": "tst"
+      }
+    }
+  },
+  "dependencies": {
+    "electron-compile": "^6.4.2",
+    "electron-squirrel-startup": "^1.0.0",
+    "highcharts": "^6.0.7",
+    "jimp": "^0.2.28",
+    "moment": "^2.21.0",
+    "nedb": "^1.8.0",
+    "nedb-logger": "^0.1.0",
+    "node-suggestive-search": "^1.9.2"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "electron-forge": "^5.1.1",
+    "electron-prebuilt-compile": "1.8.2",
+    "eslint": "^3.19.0"
+  }
+}
