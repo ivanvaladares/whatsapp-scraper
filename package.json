@@ -45,7 +45,7 @@
   "dependencies": {
     "electron-compile": "^6.4.2",
     "electron-squirrel-startup": "^1.0.0",
-    "highcharts": "^6.0.7",
+    "highcharts": "^8.2.0",
     "jimp": "^0.2.28",
     "moment": "^2.21.0",
     "nedb": "^1.8.0",
